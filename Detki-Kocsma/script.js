@@ -1,6 +1,6 @@
 const header = document.querySelector("header h3")
-const napok = document.querySelector(".dates")
-const cimsor = document.querySelector("#prev, #next")
+const napok = document.querySelector(".napok")
+const cimsor = document.querySelector("#elozo, #kovetkezo")
 
 const Osszhonap = [
     "Január",
@@ -36,8 +36,8 @@ function render() {
     for (let i = 1; i <= endDate; i++) {
         let className =
           i === date.getDate() &&
-          month === new Date().getMonth() &&
-          year === new Date().getFullYear()
+          honap === new Date().getMonth() &&
+          ev === new Date().getFullYear()
             ? ' class="today"'
             : "";
         honapok += `<li${className}>${i}</li>`;
@@ -50,9 +50,9 @@ function render() {
     header.textContent = `${Osszhonap[honap]} ${ev}`;
 }
 
-cimsor.forEach((nav) => {
-    nav.addEventListener("click", (e) => {
-        const btnId = e.target.id;
+
+    cimsor.addEventListener("click", (event) => {
+        const btnId = event.target.id;
 
         if (btnId === "elozo" && honap === 0) {
             ev--;
@@ -72,5 +72,5 @@ cimsor.forEach((nav) => {
 
 
     });
-});
+
 render();
