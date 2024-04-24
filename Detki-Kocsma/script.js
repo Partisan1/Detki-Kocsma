@@ -52,8 +52,25 @@ function render() {
 
 cimsor.forEach((nav) => {
     nav.addEventListener("click", (e) => {
+        const btnId = e.target.id;
 
+        if (btnId === "elozo" && honap === 0) {
+            ev--;
+            honap = 11;
+        } else if (btnId === "kovetkezo" && honap === 11) {
+            ev++;
+            honap = 0;
+        } else {
+            honap = btnId === "kovetkezo" ? honap + 1 : honap - 1;
+        }
+
+        date = new Date(ev, honap, new Date().getDate());
+        ev = date.getFullYear();
+        honap = date.getMonth();
+
+        render();
 
 
     });
 });
+render();
