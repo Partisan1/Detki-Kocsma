@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 2rem;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,6 +22,43 @@ h1 {
   margin-bottom: 10rem;
 
 }
+
+
+
+.sajt{
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 6rem;
+}
+
+.sajt::before{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content:attr(data-text);
+  position: absolute;
+  color: white;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate
+{
+  0%,10%,100%{
+    width: 0;
+  }
+  70%,90%{
+    width: 100%;
+
+  }
+}
+
+
 h3 {
   font-weight: 600;
 
@@ -89,7 +130,8 @@ hr{
   border-color: #000;
 }
 .napok {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .datumok li.today {
@@ -114,4 +156,5 @@ hr{
 .datumok li:hover{
   background-color: rgb(178, 174, 174);
   transition: .3s;
+  border-radius: 50px;
 }
