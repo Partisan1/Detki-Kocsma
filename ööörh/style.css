@@ -11,6 +11,7 @@ body {
   padding: 2rem;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   transition: background-image 0.5s ease;
 }
@@ -26,7 +27,7 @@ h1 {
 
 
 
-.sajt{
+.cim{
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -35,7 +36,7 @@ h1 {
   font-size: 6rem;
 }
 
-.sajt::before{
+.cim::before{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,4 +159,12 @@ hr{
   background-color: rgb(178, 174, 174);
   transition: .3s;
   border-radius: 50px;
+}
+
+
+@media (max-width: 500px){
+  .cim{
+    font-size: 45px;
+    margin-bottom:0;
+    margin-top: 10px;  }
 }
