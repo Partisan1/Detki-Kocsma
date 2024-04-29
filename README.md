@@ -1,2 +1,2 @@
-# Detki-Kocsma
+# Toriversenyesek
 Kalendáriumos projekt feladat
